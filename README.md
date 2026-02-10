@@ -87,17 +87,23 @@ view-direction 의존성과 불연속을 줄이기 위해 isotropic Gaussian과 
 (1) constraint 안정성, (2) 경계 표면의 시각적 일관성, (3) 데이터 구조 업데이트 비용이 핵심 이슈
 > - Algorithm & Details: [상세 구현/알고리즘](https://github.com/hyeonnmin/PBD-Topology-Cutting)
 
+---
+
 ## Results
 
 ### Visual highlights (Before / After)
 
-Before: 기존 분리 파이프라인에서는 topology change 이후 표면/경계가 끊기거나(holes), 재구성 비용 때문에 프레임 드랍이 발생하기 쉬움
+**Before** : 기존 분리 파이프라인에서는 topology change 이후 표면/경계가 끊기거나(holes), 재구성 비용 때문에 프레임 드랍이 발생하기 쉬움
 
 <video src="https://github.com/user-attachments/assets/f71c5daa-f409-4c67-897a-7724a7c17d72" width="360" controls loop muted playsinline></video>
 
-After: 본 시스템은 Boundary Particles + one-pass particle→Gaussian으로 cutting/tearing 이후에도 경계 밀도와 표면 일관성(surface coherence) 을 유지하며 즉시 렌더링에 반영
+---
+
+**After** : 본 시스템은 Boundary Particles + one-pass particle→Gaussian으로 cutting/tearing 이후에도 경계 밀도와 표면 일관성(surface coherence) 을 유지하며 즉시 렌더링에 반영
 
 <video src="https://github.com/user-attachments/assets/8e5ba269-950d-4413-a94c-66dbece1c6d8" width="360" controls loop muted playsinline></video>
+
+---
 
 ### Quick metrics
 
