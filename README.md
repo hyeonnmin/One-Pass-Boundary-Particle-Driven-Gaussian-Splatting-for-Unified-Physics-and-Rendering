@@ -23,9 +23,9 @@
 
 ### Problem statement
 
-> 입력 영상이나 학습/최적화에 의존하지 않고,
-> topology change를 포함한 실시간 PBD 시뮬레이션 결과를
-> Gaussian primitive로 안정적이고 일관되게(one-pass) 렌더링할 수 있는가?
+ 입력 영상이나 학습/최적화에 의존하지 않고,
+ topology change를 포함한 실시간 PBD 시뮬레이션 결과를
+ Gaussian primitive로 안정적이고 일관되게(one-pass) 렌더링할 수 있는가?
 
 ### Key motivation
 
