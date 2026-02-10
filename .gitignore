@@ -1,0 +1,35 @@
+# Visual Studio
+.vs/
+**/.vs/
+ipch/
+**/ipch/
+*.VC.db
+*.opendb
+*.suo
+
+# Build outputs
+x64/
+x86/
+**/x64/
+**/x86/
+Debug/
+Release/
+**/Debug/
+**/Release/
+[Bb]in/
+[Oo]bj/
+out/
+build/
+
+# Intermediate / artifacts
+*.obj
+*.pdb
+*.idb
+*.ilk
+*.tlog
+*.log
+*.exe
+*.dll
+*.lib
+*.exp
+*.cso
