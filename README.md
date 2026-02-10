@@ -34,7 +34,7 @@
 
 --- 
 
-### Key Ideas / Constributions 
+## Key Ideas / Constributions 
 
 - Boundary Particles for robust topology changes
 절단/찢어짐 등 topology change 상황에서도 경계 영역의 입자 밀도와 기하 정보를 안정적으로 유지해 표면 표현의 일관성을 확보.
@@ -50,7 +50,7 @@ view-direction 의존성과 불연속을 줄이기 위해 isotropic Gaussian과 
 
 ---
 
-### Pipeline / System overview
+## Pipeline / System overview
 
 One-pass loop
 
