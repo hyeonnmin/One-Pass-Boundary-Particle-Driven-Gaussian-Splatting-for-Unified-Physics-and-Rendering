@@ -52,7 +52,7 @@ view-direction 의존성과 불연속을 줄이기 위해 isotropic Gaussian과 
 
 ## Pipeline / System overview
 
-One-pass loop
+### One-pass loop
 
 - Update: ApplyExtForces → (ProjectDistance + SolveOverpressure) × N → UpdateParticles
 
@@ -86,3 +86,26 @@ One-pass loop
 > - 포인트: topology change는 단순 변형과 달리 인접 관계/제약 그래프가 프레임마다 바뀌는 이벤트,
 (1) constraint 안정성, (2) 경계 표면의 시각적 일관성, (3) 데이터 구조 업데이트 비용이 핵심 이슈
 > - Algorithm & Details: [상세 구현/알고리즘](https://github.com/hyeonnmin/PBD-Topology-Cutting)
+
+## Results
+
+### Visual highlights (Before / After)
+
+Before: 기존 분리 파이프라인에서는 topology change 이후 표면/경계가 끊기거나(holes), 재구성 비용 때문에 프레임 드랍이 발생하기 쉬움
+
+<video src="https://github.com/user-attachments/assets/f71c5daa-f409-4c67-897a-7724a7c17d72" width="360" controls loop muted playsinline></video>
+
+After: 본 시스템은 Boundary Particles + one-pass particle→Gaussian으로 cutting/tearing 이후에도 경계 밀도와 표면 일관성(surface coherence) 을 유지하며 즉시 렌더링에 반영
+
+<video src="https://github.com/user-attachments/assets/8e5ba269-950d-4413-a94c-66dbece1c6d8" width="360" controls loop muted playsinline></video>
+
+### Quick metrics
+
+| Metric | Result |
+|---|---|
+| **CPU Frame (avg)** | **15.142 ms** (≈ **66.0 FPS**) |
+| **CPU Frame (range)** | **9.265–24.083 ms** (≈ **107.9–41.5 FPS**) |
+| **GPU Scene (avg)** | **1.579 ms** |
+| **GPU Scene (range)** | **0.520–2.862 ms** |
+
+
