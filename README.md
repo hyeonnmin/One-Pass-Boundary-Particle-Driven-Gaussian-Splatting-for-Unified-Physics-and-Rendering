@@ -58,32 +58,31 @@ One-pass loop
 
 - Render: Particle → Gaussian → 3DGS Splatting
 
-<img width="4924" height="1124" alt="image" src="https://github.com/user-attachments/assets/a43f593e-40f9-462a-b901-27895fa5247e" />
+<img width="4924" height="1124" alt="image" src="https://github.com/user-attachments/assets/4ab6fd03-f38f-4bbd-bb8b-e4a319bf0613" />
 
 ### Core Modules (detailed)
 
 1) Distance Constraints (shape preservation)
 
-- 역할: stretch/structural 유지, 기본적인 변형 안정화
-
-- 포인트: 반복(iterations)로 수렴, topology change 이후에도 국소 안정성 유지
-
-- Implementation: [상세 보기](https://github.com/hyeonnmin/Position-Based-Dynamics-in-Plane-Cloth)
+> - 역할: stretch/structural 유지, 기본적인 변형 안정화
+> - 포인트: 반복(iterations)로 수렴, topology change 이후에도 국소 안정성 유지
+> - Algorithm & Details: [상세 구현/알고리즘](https://github.com/hyeonnmin/Position-Based-Dynamics-in-Plane-Cloth)
 
 2) Overpressure / Volume Constraints (balloon-like behavior)
 
-- 역할: 목표 부피 유지/증가로 풍선 효과, 내부 압력 기반 복원력
-
-- 포인트: 큰 변형에서도 형태 유지, constraint와 함께 반복 수렴
-
-- Implementation: [상세 보기](https://github.com/hyeonnmin/Position-Based-Dynamics-in-ClothBalloons)
+> - 역할: 목표 부피 유지/증가로 풍선 효과, 내부 압력 기반 복원력
+> - 포인트: 큰 변형에서도 형태 유지, constraint와 함께 반복 수렴
+> - Algorithm & Details: [상세 구현/알고리즘](https://github.com/hyeonnmin/Position-Based-Dynamics-in-ClothBalloons)
 
 3) Boundary Particles (topology change robustness)
 
-- 역할: cutting/tearing 이후 경계의 샘플 밀도/기하를 보강해 surface coherence 유지
+>- 역할: cutting/tearing 이후 경계의 샘플 밀도/기하를 보강해 surface coherence 유지
+>- 포인트: 새 경계가 생겨도 Gaussian 분포가 얇아지거나 깨지지 않도록 보조 표현 제공
+>- Algorithm & Details: [상세 구현/알고리즘](https://github.com/hyeonnmin/PBD-ClothBalloon-BoundaryParticles)
 
-- 포인트: 새 경계가 생겨도 Gaussian 분포가 얇아지거나 깨지지 않도록 보조 표현 제공
+4) Topology Change (Cutting / Tearing)
 
-- Implementation: [상세 보기](https://github.com/hyeonnmin/PBD-ClothBalloon-BoundaryParticles)
-
-
+> - 역할: 시뮬레이션 중 절단/찢어짐을 반영해 메시 연결성(connectivity) 을 갱신하고, 이후 프레임에서 제약/렌더링이 새 구조를 따르도록 업데이트
+> - 포인트: topology change는 단순 변형과 달리 인접 관계/제약 그래프가 프레임마다 바뀌는 이벤트,
+(1) constraint 안정성, (2) 경계 표면의 시각적 일관성, (3) 데이터 구조 업데이트 비용이 핵심 이슈
+> - Algorithm & Details: [상세 구현/알고리즘](https://github.com/hyeonnmin/PBD-Topology-Cutting)
