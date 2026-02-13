@@ -24,7 +24,7 @@
     <ProjectGuid>{a02c237d-12dc-46e1-84d5-cf6f9c56b709}</ProjectGuid>
     <RootNamespace>PBD_using_3DGS_final1</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>PBD_using_3DGS</ProjectName>
+    <ProjectName>PBD_using_3DGS_final1</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
