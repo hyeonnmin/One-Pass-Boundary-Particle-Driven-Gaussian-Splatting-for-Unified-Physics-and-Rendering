@@ -89,6 +89,57 @@ view-direction 의존성과 불연속을 줄이기 위해 isotropic Gaussian과 
 
 ---
 
+## Controls 
+
+### 카메라 이동
+- `W` : 전진
+- `S` : 후진
+- `A` : 왼쪽 이동
+- `D` : 오른쪽 이동
+- `Q` : 아래로 이동
+- `E` : 위로 이동
+
+### 카메라 회전
+- `Space` : 시점 회전
+
+### Volume Pressure 조절
+- `+` : Volume pressure 증가
+- `-` : Volume pressure 감소
+
+### GUI 버튼
+- **Change Mesh Model**  
+  표시할 메쉬 모델을 변경합니다.
+
+- **Line Cutting**  
+  현재 선택된 메쉬에 대해 랜덤한 2D 방향으로 라인 커팅을 수행합니다.  
+  커팅 후 변경된 파티클 정보가 콘솔에 출력됩니다.
+
+- **Print Particle Information**  
+  현재 메쉬의 파티클 정보를 콘솔에 출력합니다.
+
+- **Print Frame Time**  
+  프레임 타임 측정을 시작합니다.
+
+- **Rotation Start**  
+  카메라 자동 회전을 활성화합니다.
+
+- **Particle Distance**  
+  boundary particle 간격을 조절합니다.
+
+- **Gaussian Scale**  
+  Gaussian 크기를 조절합니다.
+
+- **Gaussian Alpha**  
+  Gaussian alpha 값을 조절합니다.
+
+---
+
+## 참고
+- **Change Mesh Model** 버튼으로 현재 표시되는 메쉬를 변경할 수 있습니다.
+- **Line Cutting** 기능은 현재 선택된 메쉬에만 적용됩니다.
+
+---
+
 ## Results
 
 ### Visual highlights (Before / After)
